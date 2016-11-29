@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- bootstrap 样式引用-->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!-- 字体文件 引用-->
+		<link rel="stylesheet" href="css/font-awesome.min93e3.css" />
+		<style>
+		body{color:#676A6C;font-family: "微软雅黑";}
+			.fathernode{width:auto; height: 30px; line-height:30px;display: block;}
+			a:hover{cursor: pointer;}
+			.mr5{margin-right: 5px;}
+			ul li{list-style: none;}
+			a{color:#676A6C;}
+		</style>
+	</head>
+	<body>
+		<ul class="treeview">
+			<li><a class="fathernode">省市视图</a>
+				<ul>					
+					<li><a class="fathernode">贵阳市</a>
+						<ul>
+							<li><a>南明区</a></li>
+							<li><a>云岩区</a></li>
+							<li><a>观山湖区</a></li>
+						</ul>
+					</li>
+					<li><a class="fathernode">遵义市</a>
+						<ul>
+							<li><a>红花岗区</a></li>
+							<li><a>汇川区</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a class="fathernode">企业视图</a>
+				<ul>					
+					<li><a>淘宝</a></li>
+					<li><a>天猫</a></li>
+					<li><a>京东</a></li>
+				</ul>
+			</li>
+		</ul>
+	<!-- jQuery引用 -->
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('.fathernode').prepend("<i class='mr5 fa fa-folder-open'></i>");
+			$('.treeview').find("li a:not('.fathernode')").prepend("<i class='mr5 fa fa-file-text-o'></i>");
+		});
+		$('.fathernode').click(function(){
+			$(this).siblings().slideToggle();
+			$(this).find('i').toggleClass('fa-folder-open fa-folder');
+		});
+	</script>
+	</body>
+</html>
